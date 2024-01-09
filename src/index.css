@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		color: #fff;
+		background-color: #111;
+		font-family: "Montserrat Alternates", sans-serif;
+		font-weight: 400;
+		font-size: theme("fontSize.base");
+	}
+
+	svg {
+		pointer-events: none;
+	}
+}
