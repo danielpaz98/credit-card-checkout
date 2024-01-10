@@ -2,6 +2,9 @@ import { StrictMode } from "react";
 // PLUGINS
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
+import { SWRConfig } from "swr";
+// UTILS
+import { localStorageProvider } from "./utils";
 // STORE
 import { store } from "./store";
 // COMPONENTS
@@ -15,7 +18,9 @@ const root = createRoot(container);
 root.render(
 	<StrictMode>
 		<Provider store={store()}>
-			<App />
+			<SWRConfig value={{ provider: localStorageProvider }}>
+				<App />
+			</SWRConfig>
 		</Provider>
 	</StrictMode>,
 );
